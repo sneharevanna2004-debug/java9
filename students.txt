@@ -1,0 +1,48 @@
+
+-- Task 1: Create Students Table
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    marks INT,
+    attendance INT
+);
+
+
+-- Task 2: Insert 10 Student Records
+
+INSERT INTO students VALUES
+(1, 'Sneha', 'CSE', 92, 90),
+(2, 'Rahul', 'ECE', 75, 88),
+(3, 'Anjali', 'ISE', 85, 91),
+(4, 'Kiran', 'MECH', 60, 70),
+(5, 'Priya', 'CSE', 95, 96),
+(6, 'Arjun', 'EEE', 78, 82),
+(7, 'Neha', 'ISE', 89, 87),
+(8, 'Vikram', 'CIVIL', 81, 84),
+(9, 'Pooja', 'ECE', 93, 92),
+(10, 'Ramesh', 'MECH', 68, 89);
+
+
+-- Task 3: Create View
+
+CREATE VIEW eligible_scholarship_students AS
+SELECT *
+FROM students
+WHERE marks > 80
+AND attendance > 85;
+
+
+-- Task 4: Display Eligible Students
+
+SELECT * 
+FROM eligible_scholarship_students;
+
+
+-- Task 5: Try Inserting Student Through View
+
+INSERT INTO eligible_scholarship_students
+VALUES (11, 'Amit', 'CSE', 70, 90);
+
+
